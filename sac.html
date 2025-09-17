@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PlayPortal - SAC</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+
+    <style>
+        body {
+            background-color: white;
+            margin: 0;
+            font-family: 'Poppins', Arial, sans-serif;
+            color: #222;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            background-color: #2acafa;
+            color: white;
+        }
+        header img {
+            width: 100px;
+            height: auto;
+        }
+        header h1 {
+            font-family: 'Press Start 2P', cursive;
+            margin: 0;
+            font-size: 1.2rem;
+        }
+        nav {
+            padding: 10px 20px;
+            background-color: #7ed9fd;
+            font-family: 'Poppins', Arial, sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        nav a, nav b {
+            color: white;
+            text-decoration: none;
+            margin-right: 10px;
+            font-weight: 600;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            background-color: #f0f8ff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        }
+        main h2 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-family: 'Poppins', Arial, sans-serif;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #2acafa;
+            border: none;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        button:hover {
+            background-color: #25b0e0;
+        }
+        footer {
+            text-align: center;
+            padding: 15px 20px;
+            background-color: #222;
+            color: #00FFFF;
+            font-size: 0.9rem;
+            margin-top: 40px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="img/Controle.webp" alt="Logo PlayPortal" />
+        <h1>PlayPortal: Atendimento ao Cliente</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="catalogo.html">Catálogo de Jogos</a> |
+        <b>SAC</b> |
+        <a href="equipe.html">Equipe</a>
+    </nav>
+
+    <main>
+        <h2>Serviços de Atendimento ao Cliente</h2>
+        <p>Envie uma mensagem e responderemos em breve.</p>
+
+        <form id="formSAC" onsubmit="return false;">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required />
+
+            <label for="email">E-mail para resposta:</label>
+            <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required />
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>© 2025 PlayPortal. Todos os direitos reservados.</p>
+        <p>
+            Este projeto é uma ferramenta educacional e não comercial. As informações e imagens de jogos são utilizadas
+            exclusivamente para fins de demonstração, aprendizado e ilustração de conceitos de desenvolvimento web.
+        </p>
+    </footer>
+
+    <script>
+        document.getElementById("formSAC").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const nome = document.getElementById("nome").value;
+            const email = document.getElementById("email").value;
+            const mensagem = document.getElementById("mensagem").value;
+
+            // Armazena os dados no localStorage
+            localStorage.setItem("sacNome", nome);
+            localStorage.setItem("sacEmail", email);
+            localStorage.setItem("sacMensagem", mensagem);
+
+            // Redireciona para a página de confirmação
+            window.location.href = "mensagem.html";
+        });
+    </script>
+</body>
+</html>
