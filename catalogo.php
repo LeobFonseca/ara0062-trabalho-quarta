@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="estilos.css" />
-    <title>PlayPortal - Catálogo</title>
+    <title>Catálogo</title>
 </head>
 <body>
 
@@ -68,3 +68,4 @@ while ($row = $result->fetch_assoc()) {
 
 </body>
 </html>
+
